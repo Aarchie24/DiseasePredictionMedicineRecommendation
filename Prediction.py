@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Converted from Jupyter Notebook: notebook.ipynb
-Final cleaned version (no conceptual changes)
-"""
 
 # ======================
 # STEP 0 – IMPORTS
@@ -113,7 +109,7 @@ cohort["icu_los_hours"] = (
     (cohort["outtime"] - cohort["intime"]).dt.total_seconds() / 3600.0
 )
 
-# Optional: remove ultra-short stays (< 6 hours)
+# remove ultra-short stays (< 6 hours)
 cohort = cohort[cohort["icu_los_hours"] >= 6].copy()
 
 # 8) Add gender + expire_flag (from PATIENTS)
