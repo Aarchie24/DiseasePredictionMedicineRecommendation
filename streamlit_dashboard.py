@@ -1,4 +1,3 @@
-# med_reco_viewer.py
 """
 Minimal Streamlit UI:
 
@@ -232,7 +231,7 @@ st.markdown(
             font-size: 1.6rem;
             font-weight: 700;
         ">
-            Disease &amp; Medicine Recommendation Model – Feature &amp; Prediction UI
+            Disease &amp; Medicine Recommendation Model – Feature &amp; Prediction Model
         </h1>
     </div>
     """,
@@ -333,12 +332,6 @@ def login_page():
                 st.success(f"Logged in as {email}.")
                 st.rerun()
 
-    st.info(
-        "This is a **local login only** – it does not check a real backend.\n\n"
-        "After login, you can:\n"
-        "- see which features the ML model uses, and\n"
-        "- enter patient attributes to predict disease group and view medicine recommendations."
-    )
 
 # ---------------------------------------------------
 # HELPER: BUILD ONE-ROW DF FROM USER INPUTS
@@ -616,7 +609,7 @@ def main_app_page():
 
         # 5) Recommend medicines from drug_map
         st.markdown('<div class="card">', unsafe_allow_html=True)
-        st.markdown("### Medicine Recommendations (from training data)", unsafe_allow_html=True)
+        st.markdown("### Medicine Recommendations", unsafe_allow_html=True)
 
         # Use refined group if present in map, otherwise top_group
         group_for_drugs = refined_group if refined_group in drug_map else top_group
